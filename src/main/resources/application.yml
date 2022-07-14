@@ -1,0 +1,24 @@
+
+spring:
+    jpa:
+        ddl-auto: none
+    datasource:
+        url: jdbc:postgresql://localhost:5432/fileManagement
+        username: josip
+        password: josip
+    flyway:
+        enabled: true
+## MULTIPART (MultipartProperties)
+    servlet:
+        multipart:
+# Enable multipart uploads
+            enabled: true
+# Threshold after which files are written to disk.
+            file-size-threshold: 2KB
+# Max file size.
+            max-file-size: 200MB
+# Max Request Size
+            max-request-size: 215MB
+# All files uploaded through this API will be stored in this directory
+file:
+    upload-dir: src/main/resources/files/
