@@ -9,12 +9,7 @@ import com.file.uploadingAndDownloading.model.UserPackage;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.time.Clock;
-import java.time.Instant;
-import java.time.ZoneOffset;
-
 import static com.file.uploadingAndDownloading.util.FileUtil.numOfFilesInDirectory;
-import static com.file.uploadingAndDownloading.util.FileUtil.storedFileDays;
 import static org.junit.jupiter.api.Assertions.*;
 
 
