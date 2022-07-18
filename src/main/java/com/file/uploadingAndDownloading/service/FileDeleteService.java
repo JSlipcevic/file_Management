@@ -44,7 +44,7 @@ public class FileDeleteService {
         }
     }
 
-    @Scheduled(fixedRate = 5000) // ovo moran provjerit odjednom nece radi
+    @Scheduled(fixedRate = 5000)
     public void deleteOutdatedFiles() {
         List<FileEntity> allFiles = fileRepository.findAllOutdatedFiles();
 

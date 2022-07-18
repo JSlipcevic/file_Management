@@ -7,7 +7,6 @@ import com.file.uploadingAndDownloading.exception.MyFileNotUploadException;
 import com.file.uploadingAndDownloading.model.FileSortingOrder;
 import com.file.uploadingAndDownloading.repository.FileRepository;
 import com.file.uploadingAndDownloading.util.FileMapper;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -21,9 +20,7 @@ import java.util.stream.Collectors;
 import static com.file.uploadingAndDownloading.util.FileUtil.numOfFilesInDirectory;
 import static com.file.uploadingAndDownloading.util.FileUtil.storedFileDays;
 
-
 @Service
-@Slf4j
 public class FileUploadService {
 
     private final FileRepository fileRepository;

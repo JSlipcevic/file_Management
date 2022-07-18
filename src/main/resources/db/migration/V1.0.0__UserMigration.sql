@@ -11,7 +11,6 @@ CREATE TABLE users
     country varchar(50) not null,
     city varchar(50) not null,
     gender varchar(6) not null,
-   -- birth_date date not null,
     created_at timestamptz not null,
     updated_at timestamptz not null,
     package varchar(20) not null

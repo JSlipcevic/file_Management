@@ -1,6 +1,5 @@
 package com.file.uploadingAndDownloading.dto;
 
-import com.file.uploadingAndDownloading.model.UserPackage;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

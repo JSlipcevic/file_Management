@@ -15,9 +15,8 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
     @Query("SELECT u FROM UserEntity u WHERE u.id IN :ids")
     List<UserEntity> getUsers(@Param("ids") Set<Long> ids);
 
-
     @Modifying
-    @Transactional //ovo moran dobro skužit kao i modifying
+    @Transactional
     @Query(value = "DELETE FROM download_permission WHERE user_id = :id", nativeQuery = true)
     void deleteUserPermissions(@Param("id") Long id);
 

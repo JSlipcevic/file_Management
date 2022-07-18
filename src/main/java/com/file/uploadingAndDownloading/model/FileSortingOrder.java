@@ -1,6 +1,7 @@
 package com.file.uploadingAndDownloading.model;
 
 public enum FileSortingOrder {
+
     ASCENDING("asc"),
     DESCENDING("desc");
 

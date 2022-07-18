@@ -3,11 +3,9 @@ package com.file.uploadingAndDownloading.repository;
 import com.file.uploadingAndDownloading.entity.FileEntity;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
@@ -35,11 +33,6 @@ public interface FileRepository extends JpaRepository<FileEntity, Long> {
             "\ttime_to_live, updated_at, downloaded_at, download_counter, f.user_id as user_id\n" +
             "FROM download_permission d INNER JOIN file f ON d.file_id = id WHERE d.user_id = :userId", nativeQuery = true)
     List<FileEntity> findAllFilesBySpecificUser(@Param("userId") Long id, Pageable pageable);
-
-//    @Query("SELECT f FROM FileEntity f WHERE user.id = :id")
-//    List<FileEntity> findAllFilesBySpecificUser(@Param("id") Long id, Pageable pageable);
-    // ode još moran dodat da osim file-ova koje je user upload-a, i file-ove koje User može download-at (kombinacija left joina i joina)
-    // ovo peko reka da cemo sist i rjesit...gleda san ja vec primjere kako to napisat
 
 
 }

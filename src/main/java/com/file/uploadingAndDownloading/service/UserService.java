@@ -14,8 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -76,15 +74,6 @@ public class UserService {
         userRepository.deleteUserPermissions(userId);
         fileDeleteService.deleteUserUploadedFiles(userId);
         deleteUserFromRepository(userId);
-    }
-
-
-
-    public List<File> getFilesFromUser(Long userId) {
-        //ZA PEKU.... ima vec jedna slicna metoda (sortedFileByDownloadWithPagination - sortira sve file-ove od nekog user-a prema broju download-a)
-        // pa baci oko ocu ovu izbrisat ili ne (ja bi je maka)
-        List<FileEntity> allUserFiles = fileRepository.findAllFilesBySpecificUser(userId);
-        return allUserFiles.stream().map(FileMapper::toDtoFile).collect(Collectors.toList());
     }
 
     private void deleteUserFromRepository(Long userId) {
